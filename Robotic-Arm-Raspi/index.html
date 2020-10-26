@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Control cuadro eléctico</title>
+</head>
+<body>
+
+<div class="container">
+    <form action="/calibrate" method="post" id="form1">
+        <div class="jumbotron">
+            <h1 class="display-4">Control cuadro eléctrico</h1>
+            <p class="lead">
+                <button type="submit" class="btn btn-primary btn-lg" form="form1" value="Submit">Calibrar</button>
+            </p>
+        </div>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Servo</th>
+          <th scope="col">Control</th>
+          <th scope="col">Posición actual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Subir/Bajar parte abajo</td>
+          <td><input style="text-align: center" type="number" id="UNDER_ARM_DOWN_UP" min="350" max="450" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="UNDER_ARM_DOWN_UP_value"></span></p></td>
+        </tr>
+        <tr>
+          <td>Rotar cuerpo</td>
+          <td><input style="text-align: center" type="number" id="BODY_LEFT_RIGHT" min="150" max="600" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="BODY_LEFT_RIGHT_value"></span></p></td>
+        </tr>
+        <tr>
+          <td>Subir/Bajar parte arriba</td>
+          <td><input style="text-align: center" type="number" id="UPPER_ARM_DOWN_UP" min="150" max="400" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="UPPER_ARM_DOWN_UP_value"></span></p></td>
+        </tr>
+        <tr>
+          <td>Rotar brazo</td>
+          <td><input style="text-align: center" type="number" id="UPPER_ARM_ANGLE" min="150" max="600" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="UPPER_ARM_ANGLE_value"></span></p></td>
+        </tr>
+        <tr>
+          <td>Rotar cabeza</td>
+          <td><input style="text-align: center" type="number" id="HEAD_LEFT_RIGHT" min="150" max="600" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="HEAD_LEFT_RIGHT_value"></span></p></td>
+        </tr>
+        <tr>
+          <td>Subir/Bajar cabeza</td>
+          <td><input style="text-align: center" type="number" id="HEAD_DOWN_UP" min="150" max="350" value="0" step="10"
+                     oninput="servo(this.id, this.value)"></td>
+          <td><p>Valor: <span id="HEAD_DOWN_UP_value"></span></p></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+</html>
